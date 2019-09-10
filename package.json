@@ -1,11 +1,12 @@
 {
   "name": "subzero-react-admin-showcase",
   "version": "0.1.0",
+  "proxy": "http://localhost:8080",
   "private": true,
   "dependencies": {
     "aor-postgrest-client": "^0.2.5",
     "graphql": "^14.5.4",
-    "jwt-decode": "^2.2.0",
+    "http-proxy-middleware": "^0.20.0",
     "prop-types": "^15.7.2",
     "ra-data-graphql-simple": "^2.9.6",
     "ra-data-json-server": "^2.9.6",
