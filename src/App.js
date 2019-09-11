@@ -7,9 +7,7 @@ import authProvider from "./authProvider";
 
 // sending httpOnly cookie for login
 const httpClient = (url, options = {}) => {
-    options = {
-        credentials: 'include'
-    }
+    options.credentials = 'include';
 
     return fetchUtils.fetchJson(url, options);
 }
