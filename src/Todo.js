@@ -49,7 +49,11 @@ export const TodoCreate = (props) => (
     <Create {...props}>
         <SimpleForm>
             <TextInput source="todo" />
-            <BooleanInput source="private" />
+            <BooleanInput
+                options={{
+                    defaultChecked: true
+                }}
+                source="private" />
         </SimpleForm>
     </Create>
 );
