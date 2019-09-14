@@ -8,7 +8,8 @@ export default (type, params) => {
             body: JSON.stringify({ email: username, password }),
             headers: new Headers({ 
                 'Content-Type': 'application/json',
-                'Accept': 'application/vnd.pgrst.object+json'
+                'Accept': 'application/vnd.pgrst.object+json',
+                'Prefer': 'return=representation'
              }),
         });
         return fetch(request)
@@ -27,7 +28,8 @@ export default (type, params) => {
             method: 'POST',
             headers: new Headers({ 
                 'Content-Type': 'application/json',
-                'Accept': 'application/vnd.pgrst.object+json'
+                'Accept': 'application/vnd.pgrst.object+json',
+                'Prefer': 'return=representation'
             }),
         });
         return fetch(request)
