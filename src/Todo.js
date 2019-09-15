@@ -1,4 +1,5 @@
 import React from 'react';
+import CardActions from '@material-ui/core/CardActions';
 import { 
     Create,
     List,
@@ -16,27 +17,38 @@ import {
     TextInput
 } from 'react-admin';
 
-const ConditionalEditButton = ({ record, ...rest }) =>
+
+export const EditMineButton = ({ record, ...rest }) =>
     record && record.mine ? (<EditButton record={record} {...rest} />) : null;
 
-export const TodoList = (props) => {
-    console.log(props);
-
-    return (
+export const TodoList = (props) => (
     <List {...props}>
         <Datagrid>
             <ShowButton />
-            <ConditionalEditButton />}
+            <EditMineButton />}
             <TextField source="id" />
             <TextField source="todo" />
             <BooleanField source="private" />
             <BooleanField source="mine" />
         </Datagrid>
     </List>
-    )
+);
+
+const cardActionStyle = {
+    zIndex: 2,
+    display: 'inline-block',
+    float: 'right',
 };
+
+export const EditMineCardActions = ({ basePath, data }) =>
+    data && data.mine ? 
+    (<CardActions style={cardActionStyle}>
+        <EditButton basePath={basePath} record={data} />
+    </CardActions>)
+    : null;
+
 export const TodoShow = (props) => (
-    <Show {...props}>
+    <Show {...props} actions={<EditMineCardActions />}>
         <SimpleShowLayout>
             <TextField source="id" />
             <TextField source="todo" />
@@ -44,6 +56,7 @@ export const TodoShow = (props) => (
         </SimpleShowLayout>
     </Show>
 );
+
 export const TodoEdit = (props) => (
     <Edit {...props}>
         <SimpleForm>
@@ -53,6 +66,7 @@ export const TodoEdit = (props) => (
         </SimpleForm>
     </Edit>
 );
+
 export const TodoCreate = (props) => (
     <Create {...props}>
         <SimpleForm>
