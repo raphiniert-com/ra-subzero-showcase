@@ -16,17 +16,25 @@ import {
     TextInput
 } from 'react-admin';
 
-export const TodoList = (props) => (
+const ConditionalEditButton = ({ record, ...rest }) =>
+    record && record.mine ? (<EditButton record={record} {...rest} />) : null;
+
+export const TodoList = (props) => {
+    console.log(props);
+
+    return (
     <List {...props}>
         <Datagrid>
             <ShowButton />
-            <EditButton />
+            <ConditionalEditButton />}
             <TextField source="id" />
             <TextField source="todo" />
             <BooleanField source="private" />
+            <BooleanField source="mine" />
         </Datagrid>
     </List>
-);
+    )
+};
 export const TodoShow = (props) => (
     <Show {...props}>
         <SimpleShowLayout>
