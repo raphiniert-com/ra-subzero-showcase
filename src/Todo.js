@@ -22,7 +22,9 @@ export const EditMineButton = ({ record, ...rest }) =>
     record && record.mine ? (<EditButton record={record} {...rest} />) : null;
 
 export const TodoList = (props) => (
-    <List {...props}>
+    <List {...props} 
+        bulkActions={false}
+    >
         <Datagrid>
             <ShowButton />
             <EditMineButton />}
