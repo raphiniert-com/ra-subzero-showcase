@@ -4,7 +4,7 @@
   "proxy": "http://localhost:8080",
   "private": true,
   "dependencies": {
-    "aor-postgrest-client": "github:dreisel/aor-postgrest-client",
+    "aor-postgrest-client": "github:scheiblr/aor-postgrest-client",
     "graphql": "^14.5.5",
     "http-proxy-middleware": "^0.20.0",
     "prop-types": "^15.7.2",
