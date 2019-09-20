@@ -18,16 +18,16 @@ import {
 } from 'react-admin';
 
 
-export const EditMineButton = ({ record, ...rest }) =>
-    record && record.mine ? (<EditButton record={record} {...rest} />) : null;
+export const EditMineButton = ({ record, permissions, ...rest }) =>
+    (record && record.mine) || (permissions === 'webadmin') ? (<EditButton record={record} {...rest} />) : null;
 
-export const TodoList = (props) => (
+export const TodoList = ({ permissions, ...props }) => (
     <List {...props} 
-        bulkActions={false}
+        bulkActions={(permissions === 'webadmin') && ''}
     >
         <Datagrid>
             <ShowButton />
-            <EditMineButton />}
+            <EditMineButton permissions={permissions}/>
             <TextField source="id" />
             <TextField source="todo" />
             <BooleanField source="private" />
@@ -42,15 +42,15 @@ const cardActionStyle = {
     float: 'right',
 };
 
-export const EditMineCardActions = ({ basePath, data }) =>
-    data && data.mine ? 
+export const EditMineCardActions = ({ permissions, basePath, data }) =>
+    (data && data.mine) || (permissions === 'webadmin') ? 
     (<CardActions style={cardActionStyle}>
         <EditButton basePath={basePath} record={data} />
     </CardActions>)
     : null;
 
-export const TodoShow = (props) => (
-    <Show {...props} actions={<EditMineCardActions />}>
+export const TodoShow = ({ permissions, ...props }) => (
+    <Show {...props} actions={<EditMineCardActions permissions={permissions} />}>
         <SimpleShowLayout>
             <TextField source="id" />
             <TextField source="todo" />
@@ -64,7 +64,7 @@ export const TodoEdit = (props) => (
         <SimpleForm>
             <DisabledInput source="id" />
             <TextInput source="todo" />
-            <BooleanInput source="private" />
+            <BooleanInput source="private" defaultValue={false} />
         </SimpleForm>
     </Edit>
 );
@@ -74,9 +74,7 @@ export const TodoCreate = (props) => (
         <SimpleForm>
             <TextInput source="todo" />
             <BooleanInput
-                options={{
-                    defaultChecked: true
-                }}
+                defaultValue={true}
                 source="private" />
         </SimpleForm>
     </Create>
