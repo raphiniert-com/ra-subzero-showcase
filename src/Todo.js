@@ -23,7 +23,7 @@ export const EditMineButton = ({ record, permissions, ...rest }) =>
 
 export const TodoList = ({ permissions, ...props }) => (
     <List {...props} 
-        bulkActions={(permissions === 'webadmin') && ''}
+        bulkActions={(permissions === 'webadmin') && null}
     >
         <Datagrid>
             <ShowButton />
