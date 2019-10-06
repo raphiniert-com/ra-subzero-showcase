@@ -1,34 +1,23 @@
-// in App.js
-import React, { Component } from 'react';
-import buildGraphQLProvider from 'ra-data-graphql-simple';
-import { Admin } from 'react-admin';
+import React from 'react';
+import { fetchUtils, Admin, Resource } from 'react-admin';
+import postgrestClient from 'aor-postgrest-client';
+
+import {TodoShow, TodoList, TodoEdit, TodoCreate} from './Todo';
 import authProvider from "./authProvider";
 
-// import { PostCreate, PostEdit, PostList } from './posts';
+// sending httpOnly cookie for login
+const httpClient = (url, options = {}) => {
+    options.credentials = 'include';
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { dataProvider: null };
-    }
-    componentDidMount() {
-        buildGraphQLProvider({ clientOptions: { uri: 'http://localhost:8080/graphql/simple' }})
-            .then(dataProvider => this.setState({ dataProvider }));
-    }
-
-    render() {
-        const { dataProvider } = this.state;
-
-        if (!dataProvider) {
-            return <div>Loading</div>;
-        }
-
-        return (
-            <Admin dataProvider={dataProvider} authProvider={authProvider}>
-                {/*<Resource name="Post" list={PostList} edit={PostEdit} create={PostCreate} remove={Delete} />*/}
-            </Admin>
-        );
-    }
+    return fetchUtils.fetchJson(url, options);
 }
+
+const dataProvider = postgrestClient('rest', httpClient);
+
+const App = () => (
+    <Admin authProvider={authProvider} dataProvider={dataProvider}>
+        <Resource name="todos" show={TodoShow} create={TodoCreate} edit={TodoEdit} list={TodoList} />
+    </Admin>
+);
 
 export default App;
