@@ -5,14 +5,14 @@
   "private": true,
   "dependencies": {
     "aor-postgrest-client": "github:scheiblr/aor-postgrest-client",
-    "graphql": "^14.5.5",
+    "graphql": "^14.5.8",
     "http-proxy-middleware": "^0.20.0",
     "prop-types": "^15.7.2",
-    "ra-data-graphql-simple": "^2.9.6",
-    "ra-data-json-server": "^2.9.6",
-    "react": "^16.9.0",
-    "react-admin": "^2.9.6",
-    "react-dom": "^16.9.0",
+    "ra-data-graphql-simple": "^2.9.7",
+    "ra-data-json-server": "^2.9.7",
+    "react": "^16.10.2",
+    "react-admin": "^2.9.7",
+    "react-dom": "^16.10.2",
     "react-scripts": "3.1.1"
   },
   "scripts": {
