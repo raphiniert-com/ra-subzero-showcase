@@ -13,15 +13,23 @@ import {
   EditButton,
   Edit,
   SimpleForm,
-  TextInput
+  TextInput,
+  Filter
 } from 'react-admin';
 
 
 export const EditMineButton = ({ record, permissions, ...rest }) =>
   (record && record.mine) || (permissions === 'webadmin') ? (<EditButton record={record} {...rest} />) : null;
 
+const TodoFilter = (props) => (
+  <Filter {...props}>
+    <TextInput label="Search" source="todo@ilike" alwaysOn />
+    <TextInput label="Id" source="id" />
+  </Filter>
+);
+
 export const TodoList = ({ permissions, ...props }) => (
-  <List {...props}
+  <List {...props} filters={<TodoFilter />}
     bulkActionButtons={(permissions === 'webadmin') && null}
   >
     <Datagrid>
