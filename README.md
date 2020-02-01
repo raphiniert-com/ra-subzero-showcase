@@ -25,6 +25,7 @@ npm run build
 and move all the build files which are located inside `build` in your project directory into `openresty/nginx/html` inside the [subZero starter kit](https://github.com/subzerocloud/subzero-starter-kit) project which is serving the api. In order to deploy the api and app in once follow the deployment documentation of the starter kit.
 
 ## Development & testing
+
 This application bases onto [react-scripts](https://github.com/facebook/create-react-app). Therefore, we refer to the [react scripts documentation](https://github.com/raphiniert-com/ra-subzero-showcase/blob/REACT_SCRIPTS.md).
 
 ## Contributing
