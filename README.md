@@ -5,7 +5,7 @@ This repo contains a showcase [React](https://reactjs.org/) application which ba
 ## Installation
 
 ### Prerequisites
-* [subZero starter kit](https://github.com/subzerocloud/subzero-starter-kit) or [postgREST starter kit](https://github.com/subzerocloud/postgrest-starter-kit)
+* our special version of the [subZero starter kit](https://github.com/scheiblr/subzero-starter-kit)
 * [Node.js](https://nodejs.org/en/)
 
 ### Get it runnin'
@@ -15,7 +15,7 @@ npm i
 npm start
 ```
 The web interface will become available at http://localhost:3001 and proxies the api from http://localhost:8080 to http://localhost:3001.
-The proxy mechanism is defined in [src/setupProxy.js]() which loads automatically. Read [here](https://create-react-app.dev/docs/proxying-api-requests-in-development/#configuring-the-proxy-manually) for more information about proxy in a react app.
+The proxy mechanism is defined in [src/setupProxy.js](https://github.com/raphiniert-com/ra-subzero-showcase/blob/master/src/setupProxy.js) which loads automatically. Read [here](https://create-react-app.dev/docs/proxying-api-requests-in-development/#configuring-the-proxy-manually) for more information about proxy in a react app.
 
 ## Deployment
 First build the application with 
