@@ -14,7 +14,8 @@ First get the api (one of the starter kits) running, then install all the requir
 npm i
 npm start
 ```
-The web interface will become available at http://localhost:3001.
+The web interface will become available at http://localhost:3001 and proxies the api from http://localhost:8080 to http://localhost:3001.
+The proxy mechanism is defined in [src/setupProxy.js]() which loads automatically. Read [here](https://create-react-app.dev/docs/proxying-api-requests-in-development/#configuring-the-proxy-manually) for more information about proxy in a react app.
 
 ## Deployment
 First build the application with 
