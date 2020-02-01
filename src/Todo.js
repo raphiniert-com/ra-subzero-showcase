@@ -25,7 +25,7 @@ export const EditMineButton = ({ record, permissions, ...rest }) =>
 
 const TodoFilter = (props) => (
   <Filter {...props}>
-    <TextInput label="Search" source="todo@ilike" custom="ilike" alwaysOn />
+    <TextInput label="Search" source="todo@ilike" alwaysOn />
     <TextInput label="Id" source="id" />
   </Filter>
 );
