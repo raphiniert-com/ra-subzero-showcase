@@ -1,9 +1,8 @@
 import React from 'react';
 import { fetchUtils, Admin, Resource } from 'react-admin';
-import postgrestClient from 'ra-data-subzero-rest';
 
 import { TodoShow, TodoList, TodoEdit, TodoCreate } from './Todo';
-import authProvider from "./authProvider";
+import postgrestClient, { subzeroAuthProvider as authProvider} from "@raphiniert/ra-data-postgrest";
 
 // sending httpOnly cookie for login
 const httpClient = (url, options = {}) => {

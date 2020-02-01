@@ -32,7 +32,7 @@ const TodoFilter = (props) => (
 
 export const TodoList = ({ permissions, ...props }) => (
   <List {...props} filters={<TodoFilter />}
-    bulkActionButtons={(permissions === 'webadmin') ? <BulkDeleteButton /> : null}
+    bulkActionButtons={(permissions === 'webadmin') ? <BulkDeleteButton /> : false}
   >
     <Datagrid>
       <ShowButton />
