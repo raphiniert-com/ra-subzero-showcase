@@ -5,11 +5,11 @@ This repo contains a showcase [React](https://reactjs.org/) application which ba
 ## Installation
 
 ### Prerequisites
-* [subZero starter kit](https://github.com/subzerocloud/subzero-starter-kit)
+* [subZero starter kit](https://github.com/subzerocloud/subzero-starter-kit) or [postgREST starter kit](https://github.com/subzerocloud/postgrest-starter-kit)
 * [Node.js](https://nodejs.org/en/)
 
 ### Get it runnin'
-First get the api ([subZero starter kit](https://github.com/subzerocloud/subzero-starter-kit)) running, then install all the required node packages of this project and run the development server
+First get the api (one of the starter kits) running, then install all the required node packages of this project and run the development server
 ```
 npm i
 npm start
@@ -21,14 +21,14 @@ First build the application with
 ```
 npm run build
 ```
-and move all the build files which are located inside `build` in your project directory into `openresty/nginx/html` inside the [subZero starter kit](https://github.com/subzerocloud/subzero-starter-kit) project which is serving the api. In order to deploy the api and app in once follow the deployment documentation of [subZero starter kit](https://github.com/subzerocloud/subzero-starter-kit).
+and move all the build files which are located inside `build` in your project directory into `openresty/nginx/html` inside the [subZero starter kit](https://github.com/subzerocloud/subzero-starter-kit) project which is serving the api. In order to deploy the api and app in once follow the deployment documentation of the starter kit.
 
 ## Development & testing
-This application bases onto [react-scripts](https://github.com/facebook/create-react-app). Therefore, we refer to the [react scripts documentation](https://github.com/scheiblr/ra-subzero-showcase/blob/REACT_SCRIPTS.md).
+This application bases onto [react-scripts](https://github.com/facebook/create-react-app). Therefore, we refer to the [react scripts documentation](https://github.com/raphiniert-com/ra-subzero-showcase/blob/REACT_SCRIPTS.md).
 
 ## Contributing
 Anyone and everyone is welcome to contribute.
 
 ## License
-Copyright © 2019-present Raphael Scheible
-This source code in this repository is licensed under [MIT](https://github.com/scheiblr/ra-subzero-showcase/blob/LICENSE) license.
+
+This source code in this repository is licensed under [MIT](https://github.com/raphiniert-com/ra-subzero-showcase/blob/LICENSE) license.
