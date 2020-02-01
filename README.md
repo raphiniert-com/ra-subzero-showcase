@@ -5,7 +5,7 @@ This repo contains a showcase [React](https://reactjs.org/) application which ba
 ## Installation
 
 ### Prerequisites
-* our special version of the [subZero starter kit](https://github.com/scheiblr/subzero-starter-kit)
+* [this special version](https://github.com/raphiniert-com/subzero-starter-kit) of the [subZero starter kit](https://github.com/subzerocloud/subzero-starter-kit)
 * [Node.js](https://nodejs.org/en/)
 
 ### Get it runnin'
