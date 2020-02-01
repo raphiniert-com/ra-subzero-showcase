@@ -26,11 +26,11 @@ and move all the build files which are located inside `build` in your project di
 
 ## Development & testing
 
-This application bases onto [react-scripts](https://github.com/facebook/create-react-app). Therefore, we refer to the [react scripts documentation](https://github.com/raphiniert-com/ra-subzero-showcase/blob/REACT_SCRIPTS.md).
+This application bases onto [react-scripts](https://github.com/facebook/create-react-app). Therefore, we refer to the [react scripts documentation](https://github.com/raphiniert-com/ra-subzero-showcase/blob/master/REACT_SCRIPTS.md).
 
 ## Contributing
 Anyone and everyone is welcome to contribute.
 
 ## License
 
-This source code in this repository is licensed under [MIT](https://github.com/raphiniert-com/ra-subzero-showcase/blob/LICENSE) license.
+This source code in this repository is licensed under [MIT](https://github.com/raphiniert-com/ra-subzero-showcase/blob/master/LICENSE) license.
