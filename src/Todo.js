@@ -14,7 +14,9 @@ import {
   Edit,
   SimpleForm,
   TextInput,
-  Filter
+  Filter,
+  BulkDeleteButton,
+  required
 } from 'react-admin';
 
 
@@ -23,14 +25,14 @@ export const EditMineButton = ({ record, permissions, ...rest }) =>
 
 const TodoFilter = (props) => (
   <Filter {...props}>
-    <TextInput label="Search" source="todo@ilike" alwaysOn />
+    <TextInput label="Search" source="todo@ilike" custom="ilike" alwaysOn />
     <TextInput label="Id" source="id" />
   </Filter>
 );
 
 export const TodoList = ({ permissions, ...props }) => (
   <List {...props} filters={<TodoFilter />}
-    bulkActionButtons={(permissions === 'webadmin') && null}
+    bulkActionButtons={(permissions === 'webadmin') ? <BulkDeleteButton /> : null}
   >
     <Datagrid>
       <ShowButton />
@@ -70,7 +72,7 @@ export const TodoEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
       <TextInput source="id" disabled />
-      <TextInput source="todo" />
+      <TextInput source="todo" validate={[required()]} />
       <BooleanInput source="private" defaultValue={false} />
     </SimpleForm>
   </Edit>
@@ -79,7 +81,7 @@ export const TodoEdit = (props) => (
 export const TodoCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
-      <TextInput source="todo" />
+      <TextInput source="todo" validate={[required()]} />
       <BooleanInput
         defaultValue={true}
         source="private" />
