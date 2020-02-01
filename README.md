@@ -33,4 +33,4 @@ Anyone and everyone is welcome to contribute.
 
 ## License
 
-This source code in this repository is licensed under [MIT](https://github.com/raphiniert-com/ra-subzero-showcase/blob/master/LICENSE) license.
+This source code in this repository is licensed under [MIT](https://github.com/raphiniert-com/ra-subzero-showcase/blob/master/LICENSE) license and sponsored by [raphiniert.com](https://raphiniert.com).
